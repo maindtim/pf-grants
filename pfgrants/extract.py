@@ -1,10 +1,12 @@
-"""Parse an IRS e-filed Form 990-PF XML and pull out the grants list (Part XV).
+"""Parse an IRS e-filed Form 990-PF XML and pull out the grants list.
 
-Every private foundation that e-files a 990-PF must list, in Part XV, each
-grant or contribution paid during the year (recipient, address, relationship,
-foundation status, purpose, amount) and those approved for future payment.
-It also states whether it only gives to pre-selected organizations (line 2)
-and, if not, how to apply. This module turns that into plain dicts.
+Every private foundation that e-files a 990-PF must list, in the
+"Supplementary Information" part (Part XIV on the 2024 form; it was Part XV on
+older forms), each grant or contribution paid during the year (recipient,
+address, relationship, foundation status, purpose, amount) and those approved
+for future payment. It also states whether it only gives to pre-selected
+organizations (line 2) and, if not, how to apply. This module turns that into
+plain dicts.
 
 Only public data. Only what the foundation itself filed.
 """
@@ -74,7 +76,7 @@ def _address(node, us_path: str, foreign_path: str) -> dict:
 
 @dataclass
 class Grant:
-    kind: str                       # "paid" (Part XV 3a) or "future" (Part XV 3b)
+    kind: str                       # "paid" (Supplementary Information line 3a) or "future" (line 3b)
     recipient: str
     recipient_city: str
     recipient_state: str
@@ -99,11 +101,11 @@ class Foundation:
     return_ts: str
     website: str
     phone: str
-    fmv_assets_eoy: int | None
+    fmv_assets_eoy: int | None              # heading, item I (fair market value of all assets at end of year)
     contributions_paid: int | None          # Part I line 25, column (d)
-    total_grants_paid_listed: int | None    # Part XV total of 3a
-    total_grants_future_listed: int | None  # Part XV total of 3b
-    preselected_only: bool                  # Part XV line 2 checkbox
+    total_grants_paid_listed: int | None    # Supplementary Information, total of 3a
+    total_grants_future_listed: int | None  # Supplementary Information, total of 3b
+    preselected_only: bool                  # Supplementary Information, line 2 checkbox
     application_contact: str
     application_address: str
     application_form_info: str

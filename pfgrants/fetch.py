@@ -39,7 +39,7 @@ def download(url: str, dest: Path, log=print) -> Path:
     with urllib.request.urlopen(req, timeout=120) as resp:
         total = int(resp.headers.get("Content-Length") or 0)
         if dest.exists() and total and dest.stat().st_size == total:
-            log(f"  ya existe: {dest.name} ({total/1e6:.0f} MB)")
+            log(f"  already downloaded: {dest.name} ({total/1e6:.0f} MB)")
             return dest
         tmp = dest.with_suffix(dest.suffix + ".part")
         done = 0
@@ -111,7 +111,7 @@ def _extract_with_stream_unzip(zip_path: Path, names: list[str], out_dir: Path, 
     from stream_unzip import stream_unzip  # pure Python, slow (~0.5 MB/s) but needs nothing else
 
     wanted = set(names)
-    log("  aviso: sin 7-Zip; usando stream-unzip (puro Python, lento: puede tardar mas de 1 h por lote)")
+    log("  warning: no 7-Zip found; using stream-unzip (pure Python, slow: can take over an hour per batch)")
 
     def chunks():
         with open(zip_path, "rb") as fh:
@@ -143,7 +143,7 @@ def extract_members(zip_path: Path, wanted: set[str], out_dir: Path, log=print) 
         names = [n for n in _wanted_members(zf, wanted) if not (out_dir / os.path.basename(n)).exists()]
         methods = {zf.getinfo(n).compress_type for n in names[:50]}
     if not names:
-        log(f"  nada nuevo que extraer desde {zip_path.name}")
+        log(f"  nothing new to extract from {zip_path.name}")
     elif methods <= {zipfile.ZIP_STORED, zipfile.ZIP_DEFLATED, zipfile.ZIP_BZIP2, zipfile.ZIP_LZMA}:
         with zipfile.ZipFile(zip_path) as zf:
             for name in names:
@@ -152,12 +152,12 @@ def extract_members(zip_path: Path, wanted: set[str], out_dir: Path, log=print) 
     else:
         seven = find_7z()
         if seven:
-            log(f"  metodo de compresion {sorted(methods)} (Deflate64): extrayendo con {seven}")
+            log(f"  compression method {sorted(methods)} (Deflate64): extracting with {seven}")
             _extract_with_7z(seven, zip_path, names, out_dir)
         else:
             _extract_with_stream_unzip(zip_path, names, out_dir, log)
     n = sum(1 for oid in wanted if (out_dir / f"{oid}_public.xml").exists())
-    log(f"  extraidos {n} de {len(wanted)} esperados desde {zip_path.name}")
+    log(f"  extracted {n} of {len(wanted)} expected from {zip_path.name}")
     return n
 
 
@@ -171,16 +171,16 @@ def fetch_year(year: int, data_dir: Path, keep_zips: bool = False,
     idx = download(index_url(year), data_dir / f"index_{year}.csv", log)
     batches = read_index(idx)
     xml_dir = data_dir / f"pf_{year}"
-    log(f"{year}: {sum(len(v) for v in batches.values())} declaraciones 990-PF en {len(batches)} lotes")
+    log(f"{year}: {sum(len(v) for v in batches.values())} Form 990-PF returns in {len(batches)} batches")
     for batch_id in sorted(batches):
         if batches_only and batch_id not in batches_only:
             continue
         wanted = batches[batch_id]
         have = sum(1 for oid in wanted if (xml_dir / f"{oid}_public.xml").exists())
         if have == len(wanted):
-            log(f"{batch_id}: ya extraido ({have})")
+            log(f"{batch_id}: already extracted ({have})")
             continue
-        log(f"{batch_id}: bajando ({len(wanted)} 990-PF)")
+        log(f"{batch_id}: downloading ({len(wanted)} 990-PF)")
         zp = download(batch_url(year, batch_id), data_dir / f"{batch_id}.zip", log)
         got = extract_members(zp, wanted, xml_dir, log)
         if not keep_zips:
@@ -192,14 +192,14 @@ def fetch_year(year: int, data_dir: Path, keep_zips: bool = False,
             sibling = batch_id[:-1] + suffix
             if not url_exists(batch_url(year, sibling)):
                 break
-            log(f"{sibling}: lote hermano no indexado, bajando ({len(wanted) - got} pendientes)")
+            log(f"{sibling}: sibling batch not in the index, downloading ({len(wanted) - got} still missing)")
             zp = download(batch_url(year, sibling), data_dir / f"{sibling}.zip", log)
             got = extract_members(zp, wanted, xml_dir, log)
             if not keep_zips:
                 zp.unlink()
             suffix = chr(ord(suffix) + 1)
         if got < len(wanted):
-            log(f"{batch_id}: aviso, {len(wanted) - got} declaraciones del indice no aparecen en ningun zip")
+            log(f"{batch_id}: warning, {len(wanted) - got} returns listed in the index are in no zip file")
     return xml_dir
 
 
@@ -225,4 +225,4 @@ if __name__ == "__main__":  # pragma: no cover
 
     data.mkdir(parents=True, exist_ok=True)
     fetch_year(year, data, batches_only=only, log=log)
-    log("listo")
+    log("done")

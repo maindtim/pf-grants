@@ -19,7 +19,7 @@ def _log(msg: str) -> None:
 def cmd_fetch(a: argparse.Namespace) -> int:
     only = a.batches.split(",") if a.batches else None
     out = fetch_mod.fetch_year(a.year, Path(a.data), keep_zips=a.keep_zips, batches_only=only, log=_log)
-    _log(f"XML 990-PF en {out}")
+    _log(f"990-PF XML files in {out}")
     return 0
 
 
@@ -30,10 +30,10 @@ def cmd_extract(a: argparse.Namespace) -> int:
     else:
         rows = rows_from_dir(a.xml_dir, on_error=lambda p, e: errors.append(f"{p.name}: {e}"))
     n = write_csv(rows, a.out)
-    _log(f"{n} filas de grants escritas en {a.out}; {len(errors)} archivos omitidos")
+    _log(f"{n} grant rows written to {a.out}; {len(errors)} files skipped")
     if errors and a.verbose:
         for err in errors[:20]:
-            _log(f"  omitido {err}")
+            _log(f"  skipped {err}")
     return 0
 
 
@@ -45,7 +45,7 @@ def cmd_query(a: argparse.Namespace) -> int:
                             exclude_preselected=a.exclude_preselected))
     if a.out:
         write_csv(kept, a.out)
-        _log(f"{len(kept)} filas -> {a.out}")
+        _log(f"{len(kept)} rows -> {a.out}")
     else:
         w = csv.DictWriter(sys.stdout, fieldnames=GRANT_COLUMNS, extrasaction="ignore")
         w.writeheader()
@@ -65,13 +65,13 @@ def cmd_summary(a: argparse.Namespace) -> int:
     w.writerows(summ)
     if a.out:
         fh.close()
-        _log(f"{len(summ)} fundaciones -> {a.out}")
+        _log(f"{len(summ)} foundations -> {a.out}")
     return 0
 
 
 def main(argv=None) -> int:
     p = argparse.ArgumentParser(prog="pf-grants",
-                                description="Extract the grants list (Part XV) from IRS e-filed Form 990-PF returns.")
+                                description="Extract the grants list (Supplementary Information, Part XIV) from IRS e-filed Form 990-PF returns.")
     sub = p.add_subparsers(dest="cmd", required=True)
 
     f = sub.add_parser("fetch", help="download IRS batches for a year and keep only the 990-PF XML files")

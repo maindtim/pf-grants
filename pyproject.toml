@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "pf-grants"
 version = "0.1.0"
-description = "Extract the grants list (Part XV) from IRS e-filed Form 990-PF returns into CSV. Public data, no API key."
+description = "Extract the grants list (Supplementary Information, Part XIV) from IRS e-filed Form 990-PF returns into CSV. Public data, no API key."
 readme = "README.md"
 license = { text = "MIT" }
 requires-python = ">=3.10"

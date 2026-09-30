@@ -1,4 +1,4 @@
-"""pf-grants: extract the grants list (Part XV) from IRS e-filed Form 990-PF returns."""
+"""pf-grants: extract the grants list (Supplementary Information, Part XIV) from IRS e-filed Form 990-PF returns."""
 __version__ = "0.1.0"
 
 from .extract import Foundation, Grant, NotA990PF, parse_990pf, iter_990pf  # noqa: F401
