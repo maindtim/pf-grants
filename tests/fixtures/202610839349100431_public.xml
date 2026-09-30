@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Return xmlns="http://www.irs.gov/efile" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.irs.gov/efile" returnVersion="2025v4.0">
+  <ReturnHeader binaryAttachmentCnt="0">
+    <ReturnTs>2026-03-24T10:55:43-00:00</ReturnTs>
+    <TaxPeriodEndDt>2025-12-31</TaxPeriodEndDt>
+    <PreparerFirmGrp>
+      <PreparerFirmEIN>843828757</PreparerFirmEIN>
+      <PreparerFirmName>
+        <BusinessNameLine1Txt>The Filing Services</BusinessNameLine1Txt>
+      </PreparerFirmName>
+      <PreparerUSAddress>
+        <AddressLine1Txt>9 Franklin Ave Unit 6A</AddressLine1Txt>
+        <CityNm>Brooklyn</CityNm>
+        <StateAbbreviationCd>NY</StateAbbreviationCd>
+        <ZIPCd>11249</ZIPCd>
+      </PreparerUSAddress>
+    </PreparerFirmGrp>
+    <ReturnTypeCd>990PF</ReturnTypeCd>
+    <TaxPeriodBeginDt>2025-01-01</TaxPeriodBeginDt>
+    <Filer>
+      <EIN>824546011</EIN>
+      <BusinessName>
+        <BusinessNameLine1Txt>Opes Foundation</BusinessNameLine1Txt>
+      </BusinessName>
+      <BusinessNameControlTxt>OPES</BusinessNameControlTxt>
+      <PhoneNum>7182328751</PhoneNum>
+      <USAddress>
+        <AddressLine1Txt>232 91st Street Apt 1</AddressLine1Txt>
+        <CityNm>Brooklyn</CityNm>
+        <StateAbbreviationCd>NY</StateAbbreviationCd>
+        <ZIPCd>11209</ZIPCd>
+      </USAddress>
+    </Filer>
+    <BusinessOfficerGrp>
+      <PersonNm>James Gargiulo</PersonNm>
+      <PersonTitleTxt>Trustee</PersonTitleTxt>
+      <PhoneNum>7182328751</PhoneNum>
+      <SignatureDt>2026-03-24</SignatureDt>
+      <DiscussWithPaidPreparerInd>false</DiscussWithPaidPreparerInd>
+    </BusinessOfficerGrp>
+    <PreparerPersonGrp>
+      <PreparerPersonNm>P Buchinger</PreparerPersonNm>
+      <PTIN>P02456099</PTIN>
+      <PhoneNum>9292730455</PhoneNum>
+      <PreparationDt>2026-03-24</PreparationDt>
+    </PreparerPersonGrp>
+    <TaxYr>2025</TaxYr>
+    <BuildTS>2025-03-06 01:10:19Z</BuildTS>
+  </ReturnHeader>
+  <ReturnData documentCnt="3">
+    <IRS990PF documentId="990PF" softwareId="25022248" softwareVersionNum="25.0.1.0">
+      <Organization501c3ExemptPFInd>X</Organization501c3ExemptPFInd>
+      <FMVAssetsEOYAmt>147357</FMVAssetsEOYAmt>
+      <MethodOfAccountingAccrualInd>X</MethodOfAccountingAccrualInd>
+      <AnalysisOfRevenueAndExpenses>
+        <ContriRcvdRevAndExpnssAmt>45000</ContriRcvdRevAndExpnssAmt>
+        <CapGainNetIncmNetInvstIncmAmt>0</CapGainNetIncmNetInvstIncmAmt>
+        <TotalRevAndExpnssAmt>45000</TotalRevAndExpnssAmt>
+        <TotalNetInvstIncmAmt>0</TotalNetInvstIncmAmt>
+        <TotOprExpensesRevAndExpnssAmt>0</TotOprExpensesRevAndExpnssAmt>
+        <TotOprExpensesNetInvstIncmAmt>0</TotOprExpensesNetInvstIncmAmt>
+        <TotOprExpensesDsbrsChrtblAmt>0</TotOprExpensesDsbrsChrtblAmt>
+        <ContriPaidRevAndExpnssAmt>9500</ContriPaidRevAndExpnssAmt>
+        <ContriPaidDsbrsChrtblAmt>9500</ContriPaidDsbrsChrtblAmt>
+        <TotalExpensesRevAndExpnssAmt>9500</TotalExpensesRevAndExpnssAmt>
+        <TotalExpensesNetInvstIncmAmt>0</TotalExpensesNetInvstIncmAmt>
+        <TotalExpensesDsbrsChrtblAmt>9500</TotalExpensesDsbrsChrtblAmt>
+        <ExcessRevenueOverExpensesAmt>35500</ExcessRevenueOverExpensesAmt>
+        <NetInvestmentIncomeAmt>0</NetInvestmentIncomeAmt>
+      </AnalysisOfRevenueAndExpenses>
+      <Form990PFBalanceSheetsGrp>
+        <CashBOYAmt>111857</CashBOYAmt>
+        <CashEOYAmt>147357</CashEOYAmt>
+        <CashEOYFMVAmt>147357</CashEOYFMVAmt>
+        <TotalAssetsBOYAmt>111857</TotalAssetsBOYAmt>
+        <TotalAssetsEOYAmt>147357</TotalAssetsEOYAmt>
+        <TotalAssetsEOYFMVAmt>147357</TotalAssetsEOYFMVAmt>
+        <TotalLiabilitiesEOYAmt>0</TotalLiabilitiesEOYAmt>
+        <RetainedEarningBOYAmt>111857</RetainedEarningBOYAmt>
+        <RetainedEarningEOYAmt>147357</RetainedEarningEOYAmt>
+        <TotNetAstOrFundBalancesBOYAmt>111857</TotNetAstOrFundBalancesBOYAmt>
+        <TotNetAstOrFundBalancesEOYAmt>147357</TotNetAstOrFundBalancesEOYAmt>
+        <TotalLiabilitiesNetAstBOYAmt>111857</TotalLiabilitiesNetAstBOYAmt>
+        <TotalLiabilitiesNetAstEOYAmt>147357</TotalLiabilitiesNetAstEOYAmt>
+      </Form990PFBalanceSheetsGrp>
+      <ChgInNetAssetsFundBalancesGrp>
+        <TotNetAstOrFundBalancesBOYAmt>111857</TotNetAstOrFundBalancesBOYAmt>
+        <ExcessRevenueOverExpensesAmt>35500</ExcessRevenueOverExpensesAmt>
+        <SubtotalAmt>147357</SubtotalAmt>
+        <TotNetAstOrFundBalancesEOYAmt>147357</TotNetAstOrFundBalancesEOYAmt>
+      </ChgInNetAssetsFundBalancesGrp>
+      <StatementsRegardingActyGrp>
+        <NewSubstantialContributorsInd>false</NewSubstantialContributorsInd>
+        <ComplyWithPublicInspRqrInd>true</ComplyWithPublicInspRqrInd>
+        <IndividualWithBooksNm>James Gargiulo</IndividualWithBooksNm>
+        <PhoneNum>7182328751</PhoneNum>
+        <LocationOfBooksUSAddress>
+          <AddressLine1Txt>232 91st Street Apt 1</AddressLine1Txt>
+          <CityNm>Brooklyn</CityNm>
+          <StateAbbreviationCd>NY</StateAbbreviationCd>
+          <ZIPCd>11209</ZIPCd>
+        </LocationOfBooksUSAddress>
+        <ForeignAccountsQuestionInd>false</ForeignAccountsQuestionInd>
+      </StatementsRegardingActyGrp>
+      <OfficerDirTrstKeyEmplInfoGrp>
+        <OfficerDirTrstKeyEmplGrp>
+          <PersonNm referenceDocumentId="990PF:160">James Gargiulo</PersonNm>
+          <USAddress>
+            <AddressLine1Txt>232 91st Street Apt 1</AddressLine1Txt>
+            <CityNm>Brooklyn</CityNm>
+            <StateAbbreviationCd>NY</StateAbbreviationCd>
+            <ZIPCd>11209</ZIPCd>
+          </USAddress>
+          <TitleTxt>Trustee</TitleTxt>
+          <AverageHrsPerWkDevotedToPosRt>000.00</AverageHrsPerWkDevotedToPosRt>
+          <CompensationAmt>0</CompensationAmt>
+        </OfficerDirTrstKeyEmplGrp>
+        <CompOfHghstPdEmplOrNONETxt>NONE</CompOfHghstPdEmplOrNONETxt>
+        <CompOfHghstPdCntrctOrNONETxt>NONE</CompOfHghstPdCntrctOrNONETxt>
+      </OfficerDirTrstKeyEmplInfoGrp>
+      <DistributableAmountGrp>
+        <DistributableAsAdjustedAmt>0</DistributableAsAdjustedAmt>
+      </DistributableAmountGrp>
+      <PFQualifyingDistributionsGrp>
+        <ExpensesAndContributionsAmt referenceDocumentId="990PF:151">9500</ExpensesAndContributionsAmt>
+        <QualifyingDistributionsAmt>9500</QualifyingDistributionsAmt>
+      </PFQualifyingDistributionsGrp>
+      <UndistributedIncomeGrp>
+        <DistributableAsAdjustedAmt>0</DistributableAsAdjustedAmt>
+        <ExcessDistributionCyovYr2Amt>6500</ExcessDistributionCyovYr2Amt>
+        <TotalExcessDistributionCyovAmt>6500</TotalExcessDistributionCyovAmt>
+        <QualifyingDistributionsAmt>9500</QualifyingDistributionsAmt>
+        <RemainingDistriFromCorpusAmt>9500</RemainingDistriFromCorpusAmt>
+        <TotalCorpusAmt>16000</TotalCorpusAmt>
+        <UndistributedIncomeCYAmt>0</UndistributedIncomeCYAmt>
+        <ExcessDistriCyovToNextYrAmt>16000</ExcessDistriCyovToNextYrAmt>
+        <ExcessFromYear2Amt>6500</ExcessFromYear2Amt>
+        <ExcessFromCurrentYearAmt>9500</ExcessFromCurrentYearAmt>
+      </UndistributedIncomeGrp>
+      <SupplementaryInformationGrp>
+        <ContributingManagerNm>NONE</ContributingManagerNm>
+        <OnlyContriToPreselectedInd>X</OnlyContriToPreselectedInd>
+        <GrantOrContributionPdDurYrGrp>
+          <RecipientBusinessName>
+            <BusinessNameLine1Txt>Hirschfeld &amp; Associates Foundation</BusinessNameLine1Txt>
+          </RecipientBusinessName>
+          <RecipientUSAddress>
+            <AddressLine1Txt>28 Boerum St</AddressLine1Txt>
+            <CityNm>Brooklyn</CityNm>
+            <StateAbbreviationCd>NY</StateAbbreviationCd>
+            <ZIPCd>11206</ZIPCd>
+          </RecipientUSAddress>
+          <RecipientFoundationStatusCd>PC</RecipientFoundationStatusCd>
+          <GrantOrContributionPurposeTxt>General Support</GrantOrContributionPurposeTxt>
+          <Amt>9500</Amt>
+        </GrantOrContributionPdDurYrGrp>
+        <TotalGrantOrContriPdDurYrAmt>9500</TotalGrantOrContriPdDurYrAmt>
+      </SupplementaryInformationGrp>
+      <TrnsfrTransRlnNonchrtblEOGrp>
+        <TrnsfrOfCashToNonchrtblEOInd>false</TrnsfrOfCashToNonchrtblEOInd>
+        <TrnsfrOtherAssetNonchrtblEOInd>false</TrnsfrOtherAssetNonchrtblEOInd>
+        <SalesOrExchangesOfAssetsInd>false</SalesOrExchangesOfAssetsInd>
+        <PurchaseOfAssetsNonchrtblEOInd>false</PurchaseOfAssetsNonchrtblEOInd>
+        <RentalOfFacilitiesOthAssetsInd>false</RentalOfFacilitiesOthAssetsInd>
+        <ReimbursementArrangementsInd>false</ReimbursementArrangementsInd>
+        <LoansOrLoanGuaranteesInd>false</LoansOrLoanGuaranteesInd>
+        <PerformanceOfServicesEtcInd>false</PerformanceOfServicesEtcInd>
+        <SharingOfFacilitiesEtcInd>false</SharingOfFacilitiesEtcInd>
+        <RelationshipsNonchrtblEOInd>false</RelationshipsNonchrtblEOInd>
+      </TrnsfrTransRlnNonchrtblEOGrp>
+    </IRS990PF>
+    <IRS990ScheduleB documentId="990B" softwareId="25022248" softwareVersionNum="25.0.1.0">
+      <Organization501c3ExemptPFInd>X</Organization501c3ExemptPFInd>
+      <GeneralRuleInd>X</GeneralRuleInd>
+      <ContributorInformationGrp>
+        <ContributorNum>1</ContributorNum>
+        <ContributorPersonNm>James Gargiulo</ContributorPersonNm>
+        <ContributorUSAddress>
+          <AddressLine1Txt>232 91st Street Apt 1</AddressLine1Txt>
+          <CityNm>Brooklyn</CityNm>
+          <StateAbbreviationCd>NY</StateAbbreviationCd>
+          <ZIPCd>11209</ZIPCd>
+        </ContributorUSAddress>
+        <TotalContributionsAmt>45000</TotalContributionsAmt>
+        <PersonContributionInd>X</PersonContributionInd>
+      </ContributorInformationGrp>
+    </IRS990ScheduleB>
+    <AccountingFeesSchedule documentId="990PF:112" softwareId="25022248" softwareVersionNum="25.0.1.0"></AccountingFeesSchedule>
+  </ReturnData>
+</Return>
